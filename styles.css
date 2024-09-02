@@ -30,7 +30,7 @@ li {
   margin: 0 auto;
 }
 header {
-  background-color: #182C61;
+  background-color: extract(, primary);
   position: sticky;
   top: 0;
   left: 0;
@@ -49,7 +49,7 @@ header .container {
   margin-left: 24px;
 }
 .menu li a {
-  color: #fff;
+  color: extract(, white);
   text-decoration: none;
 }
 section {
@@ -69,8 +69,8 @@ section {
 }
 .products .product-item .product-button {
   display: block;
-  background-color: #44bd32;
-  color: #fff;
+  background-color: extract(, secondary);
+  color: extract(, white);
   text-align: center;
   padding: 8px 0;
   border-radius: 8px;
@@ -78,7 +78,7 @@ section {
   text-decoration: none;
 }
 .products .product-item .product-button:hover {
-  background-color: #4cd137;
+  background-color: extract(, hover);
 }
 @media screen and (max-width: 1023px) {
   .container {
