@@ -1,24 +1,43 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-// Definição de variáveis
+// Definição de mapas de cores
 @colors: {
   primary: #182C61;
   secondary: #44bd32;
   hover: #4cd137;
   white: #fff;
 };
+
 @container-width: 1024px;
 @font-family: 'Roboto', sans-serif;
 
-// Função para aplicar cores usando escaping
+// Função para obter cor de um mapa
 .get-color(@color-name) {
   @color-value: extract(@colors, @color-name);
   color: @color-value;
 }
 
+// Função para obter cor de fundo de um mapa
 .get-bg-color(@color-name) {
   @color-value: extract(@colors, @color-name);
   background-color: @color-value;
+}
+
+// Font-Face
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v32/KFOmCnqEu92Fr1Me5Q.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v32/KFOlCnqEu92Fr1MmWUlvAw.ttf) format('truetype');
 }
 
 * {
