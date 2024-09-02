@@ -1,10 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
+@primary-color: #182C61;
+@secondary-color: #44bd32;
+@hover-secondary: #4cd137;
+@white-color: #fff;
+@container-width: 1024px;
+@font-family: 'Roboto', sans-serif;
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Roboto, sans-serif;
+  font-family: @font-family;
 }
 
 body {
@@ -16,13 +23,13 @@ li {
 }
 
 .container {
-  max-width: 1024px;
+  max-width: @container-width;
   width: 100%;
   margin: 0 auto;
 }
 
 header {
-  background-color: #182C61;
+  background-color: @primary-color;
   position: sticky;
   top: 0;
   left: 0;
@@ -43,7 +50,7 @@ header {
     margin-left: 24px;
 
     a {
-      color: #fff;
+      color: @white-color;
       text-decoration: none;
     }
   }
@@ -69,8 +76,8 @@ section {
 
     .product-button {
       display: block;
-      background-color: #44bd32;
-      color: #fff;
+      background-color: @secondary-color;
+      color: @white-color;
       text-align: center;
       padding: 8px 0;
       border-radius: 8px;
@@ -78,7 +85,7 @@ section {
       text-decoration: none;
 
       &:hover {
-        background-color: #4cd137;
+        background-color: @hover-secondary;
       }
     }
   }
