@@ -1,11 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-@primary-color: #182C61;
-@secondary-color: #44bd32;
-@hover-secondary: #4cd137;
-@white-color: #fff;
+// Definição de variáveis
+@colors: {
+  primary: #182C61;
+  secondary: #44bd32;
+  hover: #4cd137;
+  white: #fff;
+};
 @container-width: 1024px;
 @font-family: 'Roboto', sans-serif;
+
+// Função para aplicar cores usando escaping
+.get-color(@color-name) {
+  @color-value: extract(@colors, @color-name);
+  color: @color-value;
+}
+
+.get-bg-color(@color-name) {
+  @color-value: extract(@colors, @color-name);
+  background-color: @color-value;
+}
 
 * {
   margin: 0;
@@ -29,7 +43,7 @@ li {
 }
 
 header {
-  background-color: @primary-color;
+  .get-bg-color(primary);
   position: sticky;
   top: 0;
   left: 0;
@@ -50,7 +64,7 @@ header {
     margin-left: 24px;
 
     a {
-      color: @white-color;
+      .get-color(white);
       text-decoration: none;
     }
   }
@@ -76,8 +90,8 @@ section {
 
     .product-button {
       display: block;
-      background-color: @secondary-color;
-      color: @white-color;
+      .get-bg-color(secondary);
+      .get-color(white);
       text-align: center;
       padding: 8px 0;
       border-radius: 8px;
@@ -85,7 +99,7 @@ section {
       text-decoration: none;
 
       &:hover {
-        background-color: @hover-secondary;
+        .get-bg-color(hover);
       }
     }
   }
